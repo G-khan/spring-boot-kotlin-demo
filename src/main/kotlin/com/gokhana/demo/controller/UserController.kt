@@ -29,8 +29,8 @@ class UserController {
         val userDTO = userService.retrieveUser(username)
         return when (userDTO) {
             null -> ResponseEntity.notFound().build()
-            else -> { // Note the block
-                ResponseEntity.status(HttpStatus.CREATED).body(userDTO)
+            else -> {
+                ResponseEntity.status(HttpStatus.OK).body(userDTO)
             }
         }
     }
