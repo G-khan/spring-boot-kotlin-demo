@@ -6,7 +6,7 @@ data class UserDTO(
     val id: Long,
     @field:NotEmpty
     val name: String,
-    @field:NotEmpty
+    @field:NotEmpty(message = "Username can not empty or null!")
     val username: String
 )
 

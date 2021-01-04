@@ -9,11 +9,11 @@ interface UserService {
     fun saveUser(user: User): User
     fun getUser(username: String): User?
 
-    fun createUser(userDTO: UserDTO): User {
-        return saveUser(userDTO.toUser())
+    fun createUser(userDTO: UserDTO): UserDTO {
+        return saveUser(userDTO.toUser()).toUserDTO()
     }
 
-    fun retrieveUser(username:String) : UserDTO? {
+    fun retrieveUser(username: String): UserDTO? {
         return getUser(username)?.toUserDTO()
     }
 
