@@ -16,6 +16,6 @@ class UserServiceImpl : UserService {
     }
 
     override fun getUser(username: String): User? {
-        return userRepository.findByUsername(username).orElse(null)
+        return userRepository.findByUsername(username)
     }
 }
