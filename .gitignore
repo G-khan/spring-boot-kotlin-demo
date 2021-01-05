@@ -26,6 +26,5 @@ out/
 !**/src/test/**/out/
 
 
-gradle/wrapper
 gradlew.bat
 gradlew
