@@ -1,0 +1,14 @@
+# docker-compose.yml
+version: "3.8"
+services:
+  app:
+    image: spring-boot-kotlin-demo
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - /data/spring-boot-kotlin-demo
+    ports:
+      - "8080:8080"
+networks:
+  internal:
