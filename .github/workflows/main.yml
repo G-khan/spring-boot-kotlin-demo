@@ -8,3 +8,4 @@ jobs:
       - name: Build the stack
         run: docker-compose up -d
       - name: Test
+        run: docker run -p 8080:8080 spring-boot-kotlin-demo
