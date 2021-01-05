@@ -5,6 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Build the docker
+        run: docker build . -t spring-boot-kotlin-demo
+      - name: Test
       - name: Build the stack
         run: docker-compose up -d
       - name: Test
