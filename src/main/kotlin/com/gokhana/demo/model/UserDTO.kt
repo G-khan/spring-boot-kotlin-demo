@@ -9,4 +9,3 @@ data class UserDTO(
     @field:NotEmpty(message = "Username can not empty or null!")
     val username: String
 )
-

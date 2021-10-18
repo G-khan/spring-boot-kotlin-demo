@@ -16,11 +16,10 @@ import org.springframework.http.HttpStatus
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class UserIntegrationTests(@Autowired val restTemplate: TestRestTemplate) {
 
-
     @Test
     @Order(1)
     fun `When retrieve user by username while user does not exists then user not found`() {
-        val entity = restTemplate.getForEntity<String>("/users?user=X")
+        val entity = restTemplate.getForEntity<String>("/users?username=X")
         assertThat(entity.statusCode).isEqualTo(HttpStatus.NOT_FOUND)
     }
 
@@ -32,11 +31,10 @@ class UserIntegrationTests(@Autowired val restTemplate: TestRestTemplate) {
         assertThat(entity.statusCode).isEqualTo(HttpStatus.CREATED)
     }
 
-
     @Test
     @Order(2)
     fun `Create user while username is empty then bad request`() {
-        val userDTO = UserDTO(1, "Gökhan", "")
+        val userDTO = mockUserDTO(username = "")
         val entity = restTemplate.postForEntity<String>("/users", userDTO)
         assertThat(entity.statusCode).isEqualTo(HttpStatus.BAD_REQUEST)
     }
@@ -44,7 +42,7 @@ class UserIntegrationTests(@Autowired val restTemplate: TestRestTemplate) {
     @Test
     @Order(3)
     fun `When retrieve user by username while user is exists then user not found`() {
-        val entity = restTemplate.getForEntity<String>("/users?user=G-khan")
+        val entity = restTemplate.getForEntity<String>("/users?username=G-khan")
         assertThat(entity.statusCode).isEqualTo(HttpStatus.OK)
     }
 
