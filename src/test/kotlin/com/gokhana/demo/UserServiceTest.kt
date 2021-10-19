@@ -1,6 +1,6 @@
 package com.gokhana.demo
 
-import com.gokhana.demo.model.toUserDTO
+import com.gokhana.demo.extension.toUserDTO
 import com.gokhana.demo.repository.UserRepository
 import com.gokhana.demo.service.UserService
 import org.assertj.core.api.Assertions.assertThat

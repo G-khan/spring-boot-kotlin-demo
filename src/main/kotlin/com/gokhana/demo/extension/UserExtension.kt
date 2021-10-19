@@ -1,6 +1,7 @@
-package com.gokhana.demo.model
+package com.gokhana.demo.extension
 
 import com.gokhana.demo.entity.User
+import com.gokhana.demo.model.UserDTO
 
 fun User.toUserDTO() = UserDTO(
     name = this.name,
