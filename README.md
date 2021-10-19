@@ -24,7 +24,7 @@ Build Docker and run docker with docker-compose
 
     docker-compose up -d
 
-The app will start running at  [http://localhost:8080](http://localhost:8080/).
+The app will start running at  [http://localhost:8099](http://localhost:8099/).
 
 ## Rest APIs
 

@@ -1,6 +1,7 @@
 package com.gokhana.demo
 
 import com.gokhana.demo.extension.toUserDTO
+import com.gokhana.demo.mock.mockUser
 import com.gokhana.demo.repository.UserRepository
 import com.gokhana.demo.service.UserService
 import org.assertj.core.api.Assertions.assertThat
@@ -34,14 +35,7 @@ class UserServiceTest(@Autowired val userService: UserService) {
 		}
 	}
 
-	@Test
-	fun `retrieve saved user from repository`() {
-		val user = mockUser()
-		val userDTO = user.toUserDTO()
-		Mockito.`when`(userRepository.findByUsername(user.username)).thenReturn(user)
-		val savedUserDTO = userService.getUser(user.username)
-		assertThat(savedUserDTO).isEqualTo(userDTO)
-	}
+
 
 	@Nested
 	inner class UserRetrieve {
@@ -51,6 +45,15 @@ class UserServiceTest(@Autowired val userService: UserService) {
 			Mockito.`when`(userRepository.findByUsername(user.username)).thenReturn(null)
 			val savedUserDTO = userService.getUser(user.username)
 			assertThat(savedUserDTO).isNull()
+		}
+
+		@Test
+		fun `retrieve saved user from repository`() {
+			val user = mockUser()
+			val userDTO = user.toUserDTO()
+			Mockito.`when`(userRepository.findByUsername(user.username)).thenReturn(user)
+			val savedUserDTO = userService.getUser(user.username)
+			assertThat(savedUserDTO).isEqualTo(userDTO)
 		}
 	}
 

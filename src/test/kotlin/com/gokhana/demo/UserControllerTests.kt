@@ -1,6 +1,7 @@
 package com.gokhana.demo
 
 import com.fasterxml.jackson.databind.ObjectMapper
+import com.gokhana.demo.mock.mockUserDTO
 import com.gokhana.demo.service.UserService
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test

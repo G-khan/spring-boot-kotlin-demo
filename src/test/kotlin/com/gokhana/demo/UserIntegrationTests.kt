@@ -1,5 +1,6 @@
 package com.gokhana.demo
 
+import com.gokhana.demo.mock.mockUserDTO
 import com.gokhana.demo.model.UserDTO
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Order

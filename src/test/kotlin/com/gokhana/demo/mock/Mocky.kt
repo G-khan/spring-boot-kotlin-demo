@@ -1,4 +1,4 @@
-package com.gokhana.demo
+package com.gokhana.demo.mock
 
 import com.gokhana.demo.entity.User
 import com.gokhana.demo.model.UserDTO
